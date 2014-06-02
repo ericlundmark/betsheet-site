@@ -1,7 +1,47 @@
 <template name="index">
   <div class="jumbotron">
     <div class="container">
-      <h1>Hello, world!</h1>
+      <h1 class="text-center">Hello, and welcome to Betsheet!</h1>
     </div>
   </div>
+  <div class="container">
+      <div class="row">
+	<div class="col-sm-4">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h3 class="panel-title">Latest added</h3>
+	    </div>
+	    <div class="list-group">
+	      {{#each latestRestaurants}}
+	      <a href="{{pathFor 'restaurant' _id=_id}}" class="list-group-item">{{name}}</a>
+	      {{/each}}
+	    </div>
+	  </div>
+	</div>
+	<div class="col-sm-4">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h3 class="panel-title">Top comments</h3>
+	    </div>
+	    <div class="list-group">
+	      {{#each mostComments}}
+	      <a href="{{pathFor 'restaurant' _id=_id}}" class="list-group-item">{{name}}<span class="badge">{{comments.length}}</span></a>
+	      {{/each}}
+	    </div>
+	  </div>
+	</div>
+	<div class="col-sm-4">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h3 class="panel-title">Latest users</h3>
+	    </div>
+	    <div class="list-group">
+	      {{#each latestUsers}}
+	      <a href="{{pathFor 'user' _id=_id}}" class="list-group-item">{{profile.name}}</a>
+	      {{/each}}
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
 </template>
