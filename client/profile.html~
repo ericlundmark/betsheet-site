@@ -1,0 +1,5 @@
+<template name="profile">
+  <div class="page-header">
+    <h1>{{currentUser.profile.name}} <small>profile</small></h1>
+  </div>
+</template>

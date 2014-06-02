@@ -1,0 +1,1 @@
+Sitemap: http://www.betsheet.meteor.com/mw_AllPages_sitemap.xml
