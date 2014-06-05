@@ -1,6 +1,5 @@
 <template name="sheet">
   <div class="container">
-    {{> addGame}}
     <div class="page-header">
       <h1>
 	{{this.name}}
@@ -9,13 +8,12 @@
 	</small>
       </h1>
     </div>
-
     <div class="panel panel-default">
       <!-- Default panel contents -->
       <div class="panel-heading">
 	<b>My sheets</b>
-	<button id="add-sheets" type="button" class="btn btn-default btn-xs pull-right">
-	  <span class="glyphicon glyphicon-plus"></span> Add sheet
+	<button id="add-games" type="button" class="btn btn-default btn-xs pull-right">
+	  <span class="glyphicon glyphicon-plus"></span> Add games
 	</button>
       </div>
       <!-- Table -->
@@ -32,9 +30,10 @@
 	  {{#each this.games}}
 	  <tr id="{{_id}}">
 	    <td><span class="glyphicon glyphicon-plus"></span></td>
-	    <td>{{name}}</td>
-	    <td>{{author.profile.name}}</td>
-	    <td>{{added}}</td>
+	    <td>{{team1}}</td>
+	    <td>{{team2}}</td>
+	    <td>{{amount}}</td>
+	    <td>{{odds}}</td>
 	    <td>
 	      <button id="delete-sheet" type="button" class="btn btn-danger btn-xs">Delete</button>
 	    </td>
@@ -45,7 +44,23 @@
     </div>
   </div>
 </template>
-
-<template name="addGame">
-  {{> quickForm collection="Sheets" doc=editingDoc id="sheets" type="update"}}
+<template name="period">
+  <select>
+    <option value="ft" selected="">Fulltid</option>
+    <option value="ml">Moneyline</option>
+    <option value="ft+ot">Fulltid inkl OT</option>
+    <option value="ht">Halvtid</option>
+    <option value="ht/ft">Halvtid/Fulltid</option>
+    <option value="1h">Första halvlek</option>
+    <option value="2h">Andra halvlek</option>
+    <option value="1q">Första quartern</option>
+    <option value="2q">Andra quartern</option>
+    <option value="3q">Tredje quartern</option>
+    <option value="4q">Fjärde quartern</option>
+    <option value="p1">Första perioden</option>
+    <option value="p2">Andra perioden</option>
+    <option value="p3">Tredje perioden</option>
+    <option value="1st5">1st 5</option>
+    <option value="Annat"></option>
+  </select>
 </template>

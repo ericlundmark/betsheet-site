@@ -4,6 +4,7 @@
     "iron-router": {},
     "autoform": {},
     "accounts-entry": {},
-    "bootboxjs": {}
+    "bootboxjs": {},
+    "font-awesome": {}
   }
 }

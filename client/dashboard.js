@@ -7,7 +7,8 @@ Template.dashboard.events={
 		    author:Meteor.user(),
 		    added:new Date(),
 		    ROI:100,
-		    games:[]
+		    games:[],
+		    lastAdded:new Date()
 		},function(err, res){
 		    console.log(res);
 		});
