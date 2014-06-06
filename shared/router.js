@@ -19,7 +19,13 @@ Router.map(function() {
     this.route('sheet', {
 	path: 'sheet/:_id',
 	waitOn: function() { return Meteor.subscribe('sheet', this.params._id)},
-	data: function() { return Sheets.findOne(this.params._id); }
+	data: function() {
+	    var sheet = Sheets.findOne(this.params._id);
+	    sheet.games=_.sortBy(sheet.games,function(game){
+		return game.added;
+	    }).reverse();
+	    return sheet;
+	}
     });
     this.route('add', {
 	path: 'sheet/:_id/add',
