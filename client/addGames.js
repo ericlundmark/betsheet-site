@@ -1,4 +1,12 @@
 var Games=new Meteor.Collection(null);
+Template.addGameForm.rendered = function() {
+    $('#date').datetimepicker({
+	pickTime: false
+    });
+    $('#time').datetimepicker({
+	pickDate: false
+    });
+}
 Template.addGameForm.events({
     'submit #form':function(event, template){
 	event.preventDefault();

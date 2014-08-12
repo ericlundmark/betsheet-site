@@ -8,9 +8,10 @@ insecure
 bootstrap-3
 iron-router
 accounts-google
-autoform
 accounts-entry
 accounts-ui
 bootboxjs
 collection2
 font-awesome
+moment
+bootstrap3-datetimepicker
